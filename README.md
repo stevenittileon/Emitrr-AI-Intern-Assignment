@@ -1,23 +1,17 @@
-## 🩺 Physician Notetaker – Medical NLP Pipeline
+## Physician Notetaker Assignment
 
-An end-to-end **Natural Language Processing (NLP) system** for analyzing
-**physician–patient conversations** and converting them into structured,
-clinically meaningful information using **pretrained Transformer models**.
+An end-to-end **Natural Language Processing (NLP) system** for analyzing **physician–patient conversations** and converting them into information using **pretrained Transformer models**.
 
-This project runs **locally** and is designed to generalize across
-different medical dialogue formats.
+This project runs **locally** and is designed to generalize across different medical dialogue formats.
 
----
-
-## 📌 Core Capabilities
+## Core Capabilities
 
 - **Medical summarization**: extract symptoms, diagnoses, treatments, current status, prognosis cues, and keywords from transcripts.
 - **Sentiment & intent analysis**: map raw model outputs into clinical-friendly labels (e.g. **Anxious**, **Reassured**, **Seeking reassurance**).
 - **SOAP note generation**: convert free-text conversations into a structured **SOAP** representation.
 
----
 
-## 🗂 Project Structure
+## Project Structure
 
 ```text
 emittr/
@@ -30,9 +24,7 @@ emittr/
 └── README.md               # Project documentation
 ```
 
----
-
-## 📄 Module Overview
+## Module Overview
 
 ### **`bootstrap.py`**
 - Ensures required Python packages (`spacy`, `nltk`, `rake-nltk`, `transformers`, `torch`) are installed.
@@ -81,15 +73,14 @@ emittr/
   - **Plan**: treatment & follow-up recommendations.
 - **Output**: a SOAP note as a JSON-like dictionary (printable via `json.dumps`).
 
----
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### **Prerequisites**
-- **Python 3.10+** (works with Python 3.13 as well).
+- **Python 3.10.x or 3.11.x**
 - OS: Windows, macOS, or Linux with internet access for the first model downloads.
 
-### **1️⃣ Create & Activate a Virtual Environment (recommended)**
+### **1. Create & Activate a Virtual Environment (recommended)**
 
 ```bash
 python -m venv venv
@@ -107,7 +98,7 @@ On **macOS / Linux**:
 source venv/bin/activate
 ```
 
-### **2️⃣ Install Dependencies**
+### **2. Install Dependencies**
 
 If you already have a `requirements.txt`, run:
 
@@ -122,11 +113,9 @@ pip install spacy nltk rake-nltk transformers torch yake
 python -m spacy download en_core_web_sm
 ```
 
-> **Note:** Running `bootstrap.py` once will also attempt to auto-install core dependencies and the spaCy model.
+**Note:** Running `bootstrap.py` once will also attempt to auto-install core dependencies and the spaCy model.
 
----
-
-## ▶️ How to Run
+## How to Run
 
 All scripts can be run directly with Python once dependencies are installed.
 
@@ -162,9 +151,7 @@ python soap_note_generator.py
 
 Each script contains a small inline example in its `__main__` block; replace the sample transcript strings with your own conversation text.
 
----
-
-## 🧠 Models & Libraries
+## Models & Libraries
 
 - **spaCy**: `en_core_web_sm` for sentence splitting and linguistic features.
 - **HuggingFace Transformers**:
@@ -174,11 +161,9 @@ Each script contains a small inline example in its `__main__` block; replace the
   - Default `sentiment-analysis` model (e.g. `distilbert-base-uncased-finetuned-sst-2-english`) for sentiment.
 - **YAKE** and **RAKE**: keyword and keyphrase extraction.
 
-No fine-tuning is required; everything uses pretrained, off-the-shelf models.
+No fine-tuning is required; everything uses pretrained models.
 
----
-
-## 🚀 Possible Next Steps
+## Possible Next Steps
 
 - Add a `FastAPI` or `Streamlit` front-end for interactive use.
 - Persist outputs to a database or FHIR-compatible schema.
