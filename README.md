@@ -4,6 +4,8 @@ An end-to-end **Natural Language Processing (NLP) system** for analyzing **physi
 
 This project runs **locally** and is designed to generalize across different medical dialogue formats.
 
+Resume added as a pdf into the project.
+
 ## Core Capabilities
 
 - **Medical summarization**: extract symptoms, diagnoses, treatments, current status, prognosis cues, and keywords from transcripts.
@@ -169,3 +171,4 @@ No fine-tuning is required; everything uses pretrained models.
 - Persist outputs to a database or FHIR-compatible schema.
 - Enhance rule-based components with more robust clinical ontologies (e.g. UMLS).
 - Add tests and benchmark scripts against real or synthetic medical dialogues.
+
